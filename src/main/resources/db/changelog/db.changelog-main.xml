@@ -8,12 +8,25 @@
 		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
 		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
-	<changeSet id="1" author="Liquibase">
-		<createTable tableName="test_table">
-			<column name="test_id" type="int">
+	<changeSet id="1" author="dd">
+		<createTable tableName="person">
+			<column name="id" type="int">
 				<constraints primaryKey="true"/>
 			</column>
-			<column name="test_column" type="varchar"/>
+			<column name="name" type="varchar"/>
+			<column name="age" type="int"/>
 		</createTable>
+	</changeSet>
+	<changeSet id="2" author="dd">
+		<insert  tableName="person">
+			<column  name="id"  value="1"/>
+			<column  name="name"  value="Name1"/>
+			<column  name="age"  value="20"/>
+		</insert>
+		<insert  tableName="person">
+			<column  name="id"  value="2"/>
+			<column  name="name"  value="Name2"/>
+			<column  name="age"  value="30"/>
+		</insert>
 	</changeSet>
 </databaseChangeLog>
