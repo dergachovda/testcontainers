@@ -6,7 +6,6 @@ plugins {
 
 group = 'com.example.dd'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -42,5 +41,6 @@ dependencyManagement {
 }
 
 tasks.named('test') {
+    systemProperty 'spring.profiles.active', 'test'
     useJUnitPlatform()
 }
